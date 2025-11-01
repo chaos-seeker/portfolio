@@ -6,7 +6,7 @@ export const HeroSection = () => {
       <div className="container">
         <div className="mt-34 flex flex-col items-center gap-7 lg:flex-row-reverse lg:justify-between">
           <Image
-            src="/images/avatar.jpg"
+            src="/images/avatar.png"
             alt="Hero"
             width={150}
             height={150}
