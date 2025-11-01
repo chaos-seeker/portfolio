@@ -1,6 +1,13 @@
 'use client';
 
-import { PropsWithChildren, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  PropsWithChildren,
+  RefObject,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 
 type SmoothScrollProps = PropsWithChildren<{
@@ -8,6 +15,8 @@ type SmoothScrollProps = PropsWithChildren<{
   damping?: number;
   mass?: number;
   enabledOnTouch?: boolean;
+  containerRef?: RefObject<HTMLElement | null>;
+  bottomPadding?: number;
 }>;
 
 export default function SmoothScroll(props: SmoothScrollProps) {
@@ -17,6 +26,8 @@ export default function SmoothScroll(props: SmoothScrollProps) {
     damping = 26,
     mass = 1,
     enabledOnTouch = false,
+    containerRef,
+    bottomPadding = 0,
   } = props;
 
   const [mounted, setMounted] = useState(false);
@@ -33,12 +44,15 @@ export default function SmoothScroll(props: SmoothScrollProps) {
     setMounted(true);
   }, []);
 
-  // Measure content height and keep it updated
   useEffect(() => {
-    if (!mounted) return;
+    if (!mounted || containerRef) return;
     const updateHeight = () => {
       if (contentRef.current) {
-        setContentHeight(contentRef.current.getBoundingClientRect().height);
+        const el = contentRef.current;
+        const rectHeight = el.getBoundingClientRect().height;
+        const scrollHeight = el.scrollHeight;
+        const measured = Math.max(scrollHeight, rectHeight);
+        setContentHeight(measured);
       }
     };
     updateHeight();
@@ -57,14 +71,16 @@ export default function SmoothScroll(props: SmoothScrollProps) {
       }
       window.removeEventListener('resize', updateHeight);
     };
-  }, [mounted]);
+  }, [mounted, containerRef]);
 
   // Disable smoothing for touch unless explicitly enabled
   const smoothingEnabled = useMemo(() => {
     return mounted && (enabledOnTouch ? true : !isTouchDevice);
   }, [mounted, isTouchDevice, enabledOnTouch]);
 
-  const { scrollY } = useScroll();
+  const { scrollY } = containerRef
+    ? useScroll({ container: containerRef as RefObject<HTMLElement | null> })
+    : useScroll();
   const smoothY = useSpring(scrollY, { stiffness, damping, mass });
   const y = useTransform(smoothY, (v) => -v);
 
@@ -73,22 +89,29 @@ export default function SmoothScroll(props: SmoothScrollProps) {
   if (!smoothingEnabled) {
     return <>{children}</>;
   }
-
-  return (
-    <div style={{ position: 'relative' }}>
-      <motion.div
-        style={{
-          y,
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          willChange: 'transform',
-        }}
-      >
-        <div ref={contentRef}>{children}</div>
+  if (containerRef) {
+    return (
+      <motion.div style={{ y, willChange: 'transform' }}>
+        <div
+          ref={contentRef}
+          style={{ display: 'flow-root', paddingBottom: bottomPadding }}
+        >
+          {children}
+        </div>
       </motion.div>
-      <div style={{ height: contentHeight }} />
+    );
+  }
+  return (
+    <div style={{ height: contentHeight }}>
+      <div
+        className="sticky top-0 h-screen overflow-hidden mb-10"
+      >
+        <motion.div className="transform will-change-transform" style={{ y }}>
+          <div ref={contentRef} className="flow-root p-bottom">
+            {children}
+        </div>
+      </motion.div>
     </div>
-  );
+  </div>
+);
 }

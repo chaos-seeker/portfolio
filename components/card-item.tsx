@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink, Github } from 'lucide-react';
+import { AnimatedShinyText } from '@/ui/animated-shiny-text';
 
 interface CardItemProps {
   image: string;
@@ -23,37 +24,37 @@ export const CardItem = (props: CardItemProps) => {
           priority={false}
         />
       </div>
-      <div className="flex flex-grow flex-col border-t p-4">
-        <div className='flex justify-between items-center'>
-           <h3 className="mb-2 text-lg font-semibold">{props.title}</h3>
-           <div className="flex gap-4">
-          {props.code && (
-            <Link
-              href={props.code}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground gap-1 hover:text-primary flex items-center transition-colors"
-            >
-              <Github className="size-4" />
-              <span>code</span>
-            </Link>
-          )}
-          {props.live && (
-            <Link
-              href={props.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground gap-1 hover:text-primary flex items-center transition-colors"
-            >
-              <ExternalLink className="size-4" />
-              <span>live</span>
-            </Link>
-          )}
+      <div className="flex grow flex-col border-t p-4">
+        <div className="flex items-center justify-between">
+          <h3 className="mb-2 text-lg font-semibold">{props.title}</h3>
+          <div className="flex gap-4">
+            {props.code && (
+              <Link
+                href={props.code}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary flex items-center gap-1 transition-colors"
+              >
+                <Github className="size-4" />
+                <AnimatedShinyText>code</AnimatedShinyText>
+              </Link>
+            )}
+            {props.live && (
+              <Link
+                href={props.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary flex items-center gap-1 transition-colors"
+              >
+                <ExternalLink className="size-4" />
+                <AnimatedShinyText>live</AnimatedShinyText>
+              </Link>
+            )}
+          </div>
         </div>
-        </div>
-        <p className="text-muted-foreground mt-2 mb-4 flex-grow text-sm">
-          {props.description}
-        </p>
+        <AnimatedShinyText>
+          <p className="mb-4 grow text-sm">{props.description}</p>
+        </AnimatedShinyText>
         <div className="flex flex-wrap gap-2">
           {props.technologies.map((tech) => (
             <span

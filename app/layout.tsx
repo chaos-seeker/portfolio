@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Layout from '@/containers/layout';
+import { Header } from '@/containers/layout/header';
+import { Footer } from '@/containers/layout/footer';
 import { cn } from '@/utils/cn';
 import { Montserrat } from 'next/font/google';
 import Providers from './providers';
@@ -31,8 +32,10 @@ export default function RootLayout(props: PropsWithChildren) {
       >
         <Providers>
           <CursorCustom />
+          <Header />
           <SmoothScroll>
-            <Layout>{props.children}</Layout>
+            <main>{props.children}</main>
+            <Footer />
           </SmoothScroll>
         </Providers>
       </body>
