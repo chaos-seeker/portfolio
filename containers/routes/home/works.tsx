@@ -6,7 +6,7 @@ export const Works = () => {
       <div className="container">
         <div>
           <h2 className="text-primary mb-6 font-mono text-2xl font-bold">
-            Works
+            works
           </h2>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <CardItem

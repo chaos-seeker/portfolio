@@ -6,7 +6,7 @@ export const Skills = () => {
       <div className="container">
         <div>
           <h2 className="text-primary mb-6 font-mono text-2xl font-bold">
-            Skills
+          skills
           </h2>
           <div className="flex grid grid-cols-1 flex-col gap-4 lg:grid-cols-2">
             <ProgressItem title="HTML" value={90} />

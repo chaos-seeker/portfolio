@@ -4,7 +4,7 @@ export const About = () => {
       <div className="container">
         <div>
           <h2 className="text-primary mb-6 font-mono text-2xl font-bold">
-            About
+          about
           </h2>
           <div className="space-y-2">
             <p className="text-muted-foreground text-mdp">

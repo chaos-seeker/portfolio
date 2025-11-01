@@ -14,10 +14,10 @@ export const HeroSection = () => {
           />
           <div className="flex flex-col items-center lg:items-start">
             <p className="mb-2 text-3xl font-bold lg:text-[33px]">
-              Hello, I'm <span className="text-primary">Hamid Shahsavani</span>
+              hello, I&apos;m <span className="text-primary">hamid shahsavani</span>
             </p>
             <h2 className="text-muted-foreground mb-4 font-mono text-xl font-medium">
-              Front-End Developer
+              front-end developer
             </h2>
           </div>
         </div>
