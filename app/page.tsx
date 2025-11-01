@@ -4,6 +4,7 @@ import { Reveal } from '@/components/reveal';
 import { About } from '@/containers/routes/home/about';
 import { Skills } from '@/containers/routes/home/skills';
 import { Works } from '@/containers/routes/home/works';
+import { Projects } from '@/containers/routes/home/projects';
 
 export default function Home() {
   return (
@@ -22,6 +23,10 @@ export default function Home() {
       <SectionDivider />
       <Reveal>
         <Works />
+      </Reveal>
+      <SectionDivider />
+      <Reveal>
+        <Projects />
       </Reveal>
     </>
   );

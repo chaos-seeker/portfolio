@@ -4,7 +4,7 @@ export const HeroSection = () => {
   return (
     <section>
       <div className="container">
-        <div className="flex flex-col items-center gap-7 mt-34 lg:flex-row-reverse lg:justify-between">
+        <div className="mt-34 flex flex-col items-center gap-7 lg:flex-row-reverse lg:justify-between">
           <Image
             src="/images/avatar.jpg"
             alt="Hero"
