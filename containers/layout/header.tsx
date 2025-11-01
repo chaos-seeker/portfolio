@@ -28,7 +28,6 @@ export const Header = () => {
             height={45}
             className="rounded-full dark:invert"
           />
-          <Nav />
           <div className="flex items-center gap-2">
             <Button asChild variant="outline" size="icon">
               <Link href="https://github.com/chaos-seeker">
@@ -40,47 +39,6 @@ export const Header = () => {
         </div>
       </div>
     </header>
-  );
-};
-
-const Nav = () => {
-  return (
-    <nav>
-      <ul className="flex gap-5 hidden lg:flex">
-        <li>
-          <Link
-            href="#about"
-            className="text-smp hover:text-primary transition-colors"
-          >
-            About
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="#skills"
-            className="text-smp hover:text-primary transition-colors"
-          >
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="#works"
-            className="text-smp hover:text-primary transition-colors"
-          >
-            Works
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="#projects"
-            className="text-smp hover:text-primary transition-colors"
-          >
-            Projects
-          </Link>
-        </li>
-      </ul>
-    </nav>
   );
 };
 
