@@ -6,6 +6,8 @@ import { cn } from '@/utils/cn';
 import { Montserrat } from 'next/font/google';
 import Providers from './providers';
 import { PropsWithChildren } from 'react';
+import { CursorCustom } from '@/components/custom-cursor';
+import SmoothScroll from '@/components/smooth-scroll';
 export const metadata: Metadata = {
   title: 'Hamid Shahsavani - Portfolio',
 };
@@ -28,7 +30,10 @@ export default function RootLayout(props: PropsWithChildren) {
         className={cn([fontInter.variable, fontMono.variable, 'font-inter'])}
       >
         <Providers>
-          <Layout>{props.children}</Layout>
+          <CursorCustom />
+          <SmoothScroll>
+            <Layout>{props.children}</Layout>
+          </SmoothScroll>
         </Providers>
       </body>
     </html>
