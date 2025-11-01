@@ -46,7 +46,7 @@ export const Header = () => {
 const Nav = () => {
   return (
     <nav>
-      <ul className="flex gap-5">
+      <ul className="flex gap-5 hidden lg:flex">
         <li>
           <Link
             href="#about"
