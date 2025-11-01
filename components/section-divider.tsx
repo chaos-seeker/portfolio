@@ -1,3 +1,3 @@
 export const SectionDivider = () => {
-  return <div className="section-divider" />;
+  return <div className="section-divider container" />;
 };

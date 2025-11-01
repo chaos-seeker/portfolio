@@ -48,7 +48,7 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #10b77f;
+  --primary: oklch(60.792% 0.22837 297.045);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -81,7 +81,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.269 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(69.018% 0.1483 162.268);
+  --primary: oklch(60.792% 0.22837 297.045);
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -109,7 +109,7 @@
 }
 
 @utility container {
-  @apply mx-auto px-4 max-w-screen-lg;
+  @apply mx-auto max-w-screen-md px-4;
 }
 
 @utility bg-dot-pattern {
@@ -127,7 +127,7 @@
     color-mix(in srgb, var(--color-muted-foreground) 50%, transparent),
     transparent
   );
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 @layer base {
@@ -135,7 +135,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground bg-dot-pattern flex min-h-dvh flex-col overflow-x-hidden;
+    @apply bg-background text-foreground bg-dot-pattern flex min-h-dvh flex-col overflow-x-hidden scroll-smooth;
   }
   main {
     @apply h-full flex-1;

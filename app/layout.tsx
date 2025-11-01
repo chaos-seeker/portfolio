@@ -7,7 +7,7 @@ import { Montserrat } from 'next/font/google';
 import Providers from './providers';
 import { PropsWithChildren } from 'react';
 export const metadata: Metadata = {
-  title: 'portfolio',
+  title: 'Hamid Shahsavani - Portfolio',
 };
 
 const fontInter = Inter({
