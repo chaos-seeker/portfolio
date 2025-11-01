@@ -14,7 +14,7 @@ export const Skills = () => {
             <ProgressItem title="JavaScript" value={90} />
             <ProgressItem title="TypeScript" value={80} />
             <ProgressItem title="React" value={90} />
-            <ProgressItem title="Next.js" value={850} />
+            <ProgressItem title="Next.js" value={85} />
             <ProgressItem title="Tailwind" value={98} />
             <ProgressItem title="Git" value={80} />
             <ProgressItem title="Shadcnui" value={97} />
