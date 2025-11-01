@@ -5,6 +5,7 @@ import Layout from '@/containers/layout';
 import { cn } from '@/utils/cn';
 import { Montserrat } from 'next/font/google';
 import Providers from './providers';
+import { PropsWithChildren } from 'react';
 export const metadata: Metadata = {
   title: 'portfolio',
 };
@@ -20,18 +21,14 @@ const fontMono = Montserrat({
   variable: '--font-mono',
 });
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout(props: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn([fontInter.variable, fontMono.variable, 'font-inter'])}
       >
         <Providers>
-          <Layout>{children}</Layout>
+          <Layout>{props.children}</Layout>
         </Providers>
       </body>
     </html>
