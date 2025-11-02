@@ -11,9 +11,9 @@ export const useScrollPosition = () => {
       const currentScrollY = window.scrollY;
 
       setLastScrollY((prev) => {
-        if (currentScrollY > prev) {
+        if (currentScrollY > prev && currentScrollY > 50) {
           setScrollPosition('bottom');
-        } else if (currentScrollY < prev) {
+        } else if (currentScrollY < prev || currentScrollY <= 50) {
           setScrollPosition('top');
         }
         return currentScrollY;

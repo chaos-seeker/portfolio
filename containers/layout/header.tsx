@@ -16,18 +16,24 @@ export const Header = () => {
     <header
       className={cn(
         'fixed top-0 right-0 left-0 z-50 transition-all duration-500',
-        scrollPosition === 'bottom' ? 'translate-y-[-100%]' : 'translate-y-0',
+        scrollPosition === 'bottom' ? '-translate-y-full' : 'translate-y-0',
       )}
     >
       <div className="bg-bg/40 border-border container border-b py-3 backdrop-blur-sm">
         <div className="flex items-center justify-between">
-          <Image
-            src="/images/logo.jpg"
-            alt="Logo"
-            width={45}
-            height={45}
-            className="rounded-full dark:invert"
-          />
+          <div className='flex gap-2 items-center'>
+            <Image
+              src="/images/logo.jpg"
+              alt="Logo"
+              width={45}
+              height={45}
+              className="rounded-full dark:invert"
+            />
+            <div className='flex gap-1 text-xl font-bold'>
+              <p className="text-muted-foreground">hamid</p>
+              <p className="text-primary">shahsavani</p>
+            </div>
+          </div>
           <div className="flex items-center gap-2">
             <Button asChild variant="outline" size="icon">
               <Link href="https://github.com/chaos-seeker">

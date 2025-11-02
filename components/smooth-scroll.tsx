@@ -104,10 +104,10 @@ export default function SmoothScroll(props: SmoothScrollProps) {
   return (
     <div style={{ height: contentHeight }}>
       <div
-        className="sticky top-0 h-screen overflow-hidden mb-10"
+        className="sticky top-0 h-screen overflow-hidden"
       >
         <motion.div className="transform will-change-transform" style={{ y }}>
-          <div ref={contentRef} className="flow-root p-bottom">
+          <div ref={contentRef} className="flow-root">
             {children}
         </div>
       </motion.div>
