@@ -73,6 +73,61 @@ export default function SmoothScroll(props: SmoothScrollProps) {
     };
   }, [mounted, containerRef]);
 
+  // Handle anchor links with smooth scroll
+  useEffect(() => {
+    if (!mounted || containerRef) return;
+
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a[href^="#"]') as HTMLAnchorElement;
+      
+      if (anchor && anchor.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const hash = anchor.getAttribute('href')?.slice(1);
+        if (!hash) return;
+
+        const element = document.getElementById(hash);
+        if (!element) return;
+
+        const elementRect = element.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.scrollY;
+        const offset = 100; // Offset for header
+        
+        window.scrollTo({
+          top: absoluteElementTop - offset,
+          behavior: 'smooth',
+        });
+      }
+    };
+
+    // Handle initial hash on page load
+    const handleInitialHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (!hash) return;
+      
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (!element) return;
+
+        const elementRect = element.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.scrollY;
+        const offset = 100;
+        
+        window.scrollTo({
+          top: absoluteElementTop - offset,
+          behavior: 'smooth',
+        });
+      }, 100);
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+    handleInitialHash();
+
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+    };
+  }, [mounted, containerRef]);
+
   // Disable smoothing for touch unless explicitly enabled
   const smoothingEnabled = useMemo(() => {
     return mounted && (enabledOnTouch ? true : !isTouchDevice);

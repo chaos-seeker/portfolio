@@ -1,14 +1,20 @@
 import { Progress } from '@/ui/progress';
+import Link from 'next/link';
 
 export const Skills = () => {
   return (
     <section>
       <div className="container">
         <div>
-          <h2 className="text-primary mb-6 font-mono text-2xl font-bold">
-          skills
-          </h2>
-          <div className="flex grid grid-cols-1 flex-col gap-4 lg:grid-cols-2">
+        <div className="flex items-center gap-2 mb-6">
+            <Link href="#skills" id="skills" className="text-muted-foreground font-mono text-2xl font-bold">
+              #
+            </Link>
+            <h2 className="text-primary font-mono text-2xl font-bold">
+              skills
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 flex-col gap-4 lg:grid-cols-2">
             <ProgressItem title="HTML" value={90} />
             <ProgressItem title="CSS" value={90} />
             <ProgressItem title="JavaScript" value={90} />

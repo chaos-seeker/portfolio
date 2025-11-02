@@ -1,13 +1,19 @@
 import { CardItem } from '@/components/card-item';
+import Link from 'next/link';
 
 export const Works = () => {
   return (
     <section>
       <div className="container">
         <div>
-          <h2 className="text-primary mb-6 font-mono text-2xl font-bold">
-            works
-          </h2>
+        <div className="flex items-center gap-2 mb-6">
+            <Link href="#works" id="works" className="text-muted-foreground font-mono text-2xl font-bold">
+              #
+            </Link>
+            <h2 className="text-primary font-mono text-2xl font-bold">
+              works
+            </h2>
+          </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <CardItem
               image="/images/works-hyphorest.jpg"
