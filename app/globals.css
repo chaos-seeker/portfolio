@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
+@import 'lenis/dist/lenis.css';
 
 @custom-variant dark (&:is(.dark, .dark *));
 
@@ -148,21 +149,12 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground bg-dot-pattern flex min-h-dvh flex-col overflow-x-hidden scroll-smooth;
+    @apply bg-background text-foreground bg-dot-pattern flex min-h-dvh flex-col overflow-x-hidden;
   }
   main {
     @apply h-full flex-1;
   }
   button {
     @apply cursor-pointer;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
