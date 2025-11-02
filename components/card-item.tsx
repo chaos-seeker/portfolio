@@ -1,7 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink, Github } from 'lucide-react';
 import { AnimatedShinyText } from '@/ui/animated-shiny-text';
+import { useTranslation } from '@/hooks/translation';
 
 interface CardItemProps {
   image: string;
@@ -13,6 +16,33 @@ interface CardItemProps {
 }
 
 export const CardItem = (props: CardItemProps) => {
+  const { t } = useTranslation();
+
+  const getTechTranslation = (tech: string): string => {
+    const techMap: Record<string, string> = {
+      html: 'tech.html',
+      css: 'tech.css',
+      javascript: 'tech.javascript',
+      typescript: 'tech.typescript',
+      react: 'tech.react',
+      'next.js': 'tech.nextjs',
+      nextjs: 'tech.nextjs',
+      tailwind: 'tech.tailwind',
+      git: 'tech.git',
+      shadcnui: 'tech.shadcnui',
+      daisyui: 'tech.daisyui',
+      heroui: 'tech.heroui',
+      npm: 'tech.npm',
+      figma: 'tech.figma',
+      wordpress: 'tech.wordpress',
+      elementor: 'tech.elementor',
+      linux: 'tech.linux',
+    };
+    const normalizedTech = tech.toLowerCase().trim();
+    const key = techMap[normalizedTech];
+    return key ? t(key as any) : tech;
+  };
+
   return (
     <div className="group border-border hover:border-primary/50 flex h-full cursor-pointer flex-col overflow-hidden rounded-xl border transition-all duration-300">
       <div className="relative h-48 w-full overflow-hidden">
@@ -36,7 +66,7 @@ export const CardItem = (props: CardItemProps) => {
                 className="text-muted-foreground hover:text-primary flex items-center gap-1 transition-colors"
               >
                 <Github className="size-4" />
-                <AnimatedShinyText>code</AnimatedShinyText>
+                <AnimatedShinyText>{t('common.code')}</AnimatedShinyText>
               </Link>
             )}
             {props.live && (
@@ -47,7 +77,7 @@ export const CardItem = (props: CardItemProps) => {
                 className="text-muted-foreground hover:text-primary flex items-center gap-1 transition-colors"
               >
                 <ExternalLink className="size-4" />
-                <AnimatedShinyText>live</AnimatedShinyText>
+                <AnimatedShinyText>{t('common.live')}</AnimatedShinyText>
               </Link>
             )}
           </div>
@@ -61,7 +91,7 @@ export const CardItem = (props: CardItemProps) => {
               key={tech}
               className="bg-secondary text-secondary-foreground rounded-full px-2 py-1 text-xs"
             >
-              {tech}
+              {getTechTranslation(tech)}
             </span>
           ))}
         </div>

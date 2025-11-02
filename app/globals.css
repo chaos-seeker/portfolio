@@ -157,4 +157,43 @@
   button {
     @apply cursor-pointer;
   }
+
+  /* فونت بر اساس زبان */
+  /* انگلیسی - Inter */
+  body {
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  /* فارسی و عربی - Vazir */
+  html.font-vazir body,
+  html[lang='fa'] body,
+  html[lang='ar'] body {
+    font-family: 'Vazir', sans-serif;
+  }
+
+  /* تنظیمات RTL */
+  [dir='rtl'] {
+    direction: rtl;
+    text-align: right;
+  }
+
+  [dir='rtl'] .container {
+    text-align: right;
+  }
+
+  [dir='ltr'] {
+    direction: ltr;
+    text-align: left;
+  }
+
+  /* تبدیل text-left به text-right در RTL */
+  [dir='rtl'] .text-left,
+  [dir='rtl'] [class*='text-left'] {
+    text-align: right !important;
+  }
+
+  /* کلاس text-start که بر اساس direction تغییر می‌کنه */
+  .text-start {
+    text-align: start;
+  }
 }

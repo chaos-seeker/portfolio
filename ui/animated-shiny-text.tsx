@@ -23,7 +23,7 @@ export const AnimatedShinyText: FC<AnimatedShinyTextProps> = ({
         className={cn(
           'pointer-events-none absolute inset-0',
           'animate-shiny-text bg-size-[var(--shiny-width)_100%] bg-clip-text bg-position-[0_0] bg-no-repeat text-transparent',
-          'bg-linear-to-r from-transparent via-foreground/95 via-50% to-transparent dark:via-white/95',
+          'via-foreground/95 bg-linear-to-r from-transparent via-50% to-transparent dark:via-white/95',
         )}
       >
         {children}

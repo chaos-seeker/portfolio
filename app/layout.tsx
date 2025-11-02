@@ -9,6 +9,9 @@ import Providers from './providers';
 import { PropsWithChildren } from 'react';
 import { CursorCustom } from '@/components/custom-cursor';
 import SmoothScroll from '@/components/smooth-scroll';
+import { LanguageWrapper } from '@/components/language-wrapper';
+import { FontLoader } from '@/components/font-loader';
+
 export const metadata: Metadata = {
   title: 'Hamid Shahsavani - Portfolio',
 };
@@ -30,13 +33,16 @@ export default function RootLayout(props: PropsWithChildren) {
       <body
         className={cn([fontInter.variable, fontMono.variable, 'font-inter'])}
       >
+        <FontLoader />
         <Providers>
-          <CursorCustom />
-          <Header />
-          <SmoothScroll>
-            <main>{props.children}</main>
-            <Footer />
-          </SmoothScroll>
+          <LanguageWrapper>
+            <CursorCustom />
+            <Header />
+            <SmoothScroll>
+              <main>{props.children}</main>
+              <Footer />
+            </SmoothScroll>
+          </LanguageWrapper>
         </Providers>
       </body>
     </html>

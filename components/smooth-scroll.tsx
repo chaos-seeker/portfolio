@@ -35,8 +35,8 @@ export default function SmoothScroll(props: SmoothScrollProps) {
       wheelMultiplier: 1,
       infinite: false,
       anchors: {
-          offset: -80, 
-        },
+        offset: -80,
+      },
       ...options,
     });
     lenisRef.current = lenis;
