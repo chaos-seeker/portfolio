@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <footer>
       <div className="container">
-        <footer className="text-muted-foreground py-7 text-center text-sm">
+        <footer className="text-muted-foreground pt-7 pb-5 text-center text-sm">
           <div className="space-y-1">
             <p>©2025 hamid shahsavani. all rights reserved.</p>
             <p>developed with ❤️</p>
