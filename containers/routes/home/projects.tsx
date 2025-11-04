@@ -33,6 +33,14 @@ export const Projects = () => {
               live="https://www.npmjs.com/package/killua"
             />
             <CardItem
+              image="/images/projects-bartar.png"
+              title={t('projects.bartar.title')}
+              description={t('projects.bartar.description')}
+              technologies={['nextjs', 'tailwind', 'typescript']}
+              code="https://github.com/chaos-seeker/bartar"
+              live="https://bartar-three.vercel.app/"
+            />
+            <CardItem
               image="/images/projects-shopi.jpg"
               title={t('projects.shopi.title')}
               description={t('projects.shopi.description')}

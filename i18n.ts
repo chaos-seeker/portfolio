@@ -32,6 +32,8 @@ export const translations = {
     'projects.killua.title': 'killua',
     'projects.killua.description':
       'local storage management library for react applications.',
+    'projects.bartar.title': 'bartar',
+    'projects.bartar.description': 'a full-stack e-commerce website.',
     'projects.shopi.title': 'shopi',
     'projects.shopi.description': 'a shopping website.',
     'projects.avaMovie.title': 'ava movie',
@@ -96,6 +98,8 @@ export const translations = {
     'projects.killua.title': 'کیلوا',
     'projects.killua.description':
       'کتابخانه مدیریت localStorage برای برنامه\u200cهای React.',
+    'projects.bartar.title': 'برتر',
+    'projects.bartar.description': 'یک وب‌سایت فروشگاهی فول استک.',
     'projects.shopi.title': 'شاپی',
     'projects.shopi.description': 'یک وب‌سایت خرید و فروش.',
     'projects.avaMovie.title': 'آوا مووی',
@@ -155,6 +159,8 @@ export const translations = {
     'projects.title': 'المشاريع',
     'projects.killua.title': 'کیلوا',
     'projects.killua.description': 'مكتبة إدارة التخزين المحلي لتطبيقات ریکت.',
+    'projects.bartar.title': 'برتر',
+    'projects.bartar.description': 'موقع فروشگاهی فول استک.',
     'projects.shopi.title': 'شاپی',
     'projects.shopi.description': 'موقع تسوق.',
     'projects.avaMovie.title': 'آوا مووی',
