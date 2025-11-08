@@ -25,11 +25,11 @@ export const Works = () => {
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <CardItem
-              image="/images/works-hyphorest.jpg"
-              title={t('works.hyphorest.title')}
-              description={t('works.hyphorest.description')}
+              image="/images/work-bitgraph-paeiz-landing.jpg"
+              title={t('works.bitgraphPaeiz.title')}
+              description={t('works.bitgraphPaeiz.description')}
               technologies={['nextjs', 'tailwind', 'typescript']}
-              live="https://hyphorest.com"
+              live="https://bitgraph-landing.vercel.app/"
             />
             <CardItem
               image="/images/works-rebox.jpg"

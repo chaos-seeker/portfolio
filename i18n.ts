@@ -14,8 +14,6 @@ export const translations = {
       'my code follows best practices, emphasizes performance, and remains clean, readable, and easy to maintain.',
     'skills.title': 'skills',
     'works.title': 'works',
-    'works.hyphorest.title': 'hyphorest',
-    'works.hyphorest.description': 'this website runs on the blockchain.',
     'works.rebox.title': 'rebox',
     'works.rebox.description':
       'this website operates in the field of buying and selling books.',
@@ -28,6 +26,9 @@ export const translations = {
     'works.doctormoo.title': 'doctor moo',
     'works.doctormoo.description':
       'a personal website developed for an attorney at law.',
+    'works.bitgraphPaeiz.title': 'bitgraph autumn festival',
+    'works.bitgraphPaeiz.description':
+      'a landing page for the bitgraph autumn festival with attractive and diverse courses.',
     'projects.title': 'projects',
     'projects.killua.title': 'killua',
     'projects.killua.description':
@@ -35,7 +36,7 @@ export const translations = {
     'projects.bartar.title': 'bartar',
     'projects.bartar.description': 'a full-stack e-commerce website.',
     'projects.shopi.title': 'shopi',
-    'projects.shopi.description': 'a shopping website.',
+    'projects.shopi.description': 'a full-stack e-commerce website.',
     'projects.avaMovie.title': 'ava movie',
     'projects.avaMovie.description': 'a film website.',
     'projects.bankDash.title': 'bank dash',
@@ -84,9 +85,6 @@ export const translations = {
       'کد من از بهترین روش\u200cها پیروی می\u200cکند، بر عملکرد تأکید دارد و تمیز، قابل خواندن و نگهداری آسان است.',
     'skills.title': 'مهارت\u200cها',
     'works.title': 'نمونه کارها',
-    'works.hyphorest.title': 'هایفورست',
-    'works.hyphorest.description':
-      'این وب‌سایت بر روی بلاک چین اجرا می\u200cشود.',
     'works.rebox.title': 'ریباکس',
     'works.rebox.description':
       'این وب‌سایت در زمینه خرید و فروش کتاب فعالیت می\u200cکند.',
@@ -99,6 +97,9 @@ export const translations = {
     'works.doctormoo.title': 'دکتر مو',
     'works.doctormoo.description':
       'یک وب‌سایت شخصی که برای یک وکیل پایه یک دادگستری توسعه داده شده است.',
+    'works.bitgraphPaeiz.title': 'جشنواره پاییزه بیت گرف',
+    'works.bitgraphPaeiz.description':
+      'یک لندینگ پیج برای جشنواره پاییزه بیت گرف با دوره‌های جذاب و متنوع.',
     'projects.title': 'پروژه\u200cها',
     'projects.killua.title': 'کیلوا',
     'projects.killua.description':
@@ -106,7 +107,7 @@ export const translations = {
     'projects.bartar.title': 'برتر',
     'projects.bartar.description': 'یک وب‌سایت فروشگاهی فول استک.',
     'projects.shopi.title': 'شاپی',
-    'projects.shopi.description': 'یک وب‌سایت خرید و فروش.',
+    'projects.shopi.description': 'یک وب‌سایت فروشگاهی فول استک.',
     'projects.avaMovie.title': 'آوا مووی',
     'projects.avaMovie.description': 'یک وب‌سایت فیلم.',
     'projects.bankDash.title': 'بانک داشبورد',
@@ -154,8 +155,6 @@ export const translations = {
       'كودي يتبع أفضل الممارسات، يؤكد على الأداء، ويبقى نظيفًا وقابلًا للقراءة وسهل الصيانة.',
     'skills.title': 'المهارات',
     'works.title': 'الأعمال',
-    'works.hyphorest.title': 'هايفوريست',
-    'works.hyphorest.description': 'يعمل هذا الموقع على البلوك تشين.',
     'works.rebox.title': 'ریباکس',
     'works.rebox.description': 'يعمل هذا الموقع في مجال شراء وبيع الكتب.',
     'works.brity.title': 'بريتي',
@@ -165,13 +164,16 @@ export const translations = {
     'works.alirezaNamroodi.description': 'موقع شخصي تم تطويره لمحامٍ.',
     'works.doctormoo.title': 'دكتر مو',
     'works.doctormoo.description': 'موقع شخصي تم تطويره لمحامٍ.',
+    'works.bitgraphPaeiz.title': 'مهرجان بیت گرف الخريفي',
+    'works.bitgraphPaeiz.description':
+      'صفحة هبوط لمهرجان بیت گرف الخريفي بدورات جذابة ومتنوعة.',
     'projects.title': 'المشاريع',
     'projects.killua.title': 'کیلوا',
     'projects.killua.description': 'مكتبة إدارة التخزين المحلي لتطبيقات ریکت.',
     'projects.bartar.title': 'برتر',
     'projects.bartar.description': 'موقع فروشگاهی فول استک.',
     'projects.shopi.title': 'شاپی',
-    'projects.shopi.description': 'موقع تسوق.',
+    'projects.shopi.description': 'موقع فروشگاهی فول استک.',
     'projects.avaMovie.title': 'آوا مووی',
     'projects.avaMovie.description': 'موقع أفلام.',
     'projects.bankDash.title': 'لوحة تحكم البنك',
@@ -213,4 +215,4 @@ export function getTranslations(locale: Locale) {
   return translations[locale];
 }
 
-export type TranslationKey = keyof (typeof translations)[Locale];
+export type TranslationKey = keyof typeof translations.en;

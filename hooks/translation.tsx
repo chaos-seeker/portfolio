@@ -16,7 +16,12 @@ export function useTranslation() {
   }, []);
 
   const t = (key: TranslationKey): string => {
-    return translations[key] || key;
+    const value = translations[key];
+    if (value) {
+      return value;
+    }
+    console.warn(`Translation key "${key}" not found for locale "${locale}"`);
+    return key;
   };
 
   const setLanguage = (newLocale: Locale) => {
