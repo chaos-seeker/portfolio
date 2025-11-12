@@ -58,7 +58,6 @@ const ProgressItem = (props: ProgressItemProps) => {
     <div className="flex flex-col gap-1">
       <div className="flex w-full items-center justify-between gap-2">
         <span className="text-smp font-medium">{t(props.techKey as any)}</span>
-        <span className="text-smp font-medium">{props.value}%</span>
       </div>
       <Progress value={props.value} />
     </div>
