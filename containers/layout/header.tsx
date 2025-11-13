@@ -32,7 +32,7 @@ export const Header = () => {
               height={45}
               className="rounded-full dark:invert"
             />
-            <div className="flex gap-1 text-xl font-bold">
+            <div className="flex gap-1 text-mdp sm:text-xl font-bold">
               <p className="text-muted-foreground">{t('fullname.name')}</p>
               <p className="text-primary">{t('fullname.lastname')}</p>
             </div>

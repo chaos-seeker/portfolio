@@ -13,7 +13,7 @@ import { LanguageWrapper } from '@/components/language-wrapper';
 import { FontLoader } from '@/components/font-loader';
 
 export const metadata: Metadata = {
-  title: 'Hamid Shahsavani - Portfolio',
+  title: 'Hamid Shahsavani',
 };
 
 const fontInter = Inter({
