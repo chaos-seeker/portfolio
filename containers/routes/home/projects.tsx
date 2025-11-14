@@ -65,6 +65,14 @@ export const Projects = () => {
               live="https://shopifa.vercel.app/"
             />
             <CardItem
+              image="/images/projects-toranj.png"
+              title={t('projects.toranj.title')}
+              description={t('projects.toranj.description')}
+              technologies={['nextjs', 'tailwind', 'typescript']}
+              code="https://github.com/jouissance-seeker/toranj"
+              live="https://toranj.vercel.app/"
+            />
+            <CardItem
               image="/images/projects-ava-movie.jpg"
               title={t('projects.avaMovie.title')}
               description={t('projects.avaMovie.description')}
@@ -79,30 +87,6 @@ export const Projects = () => {
               technologies={['nextjs', 'tailwind', 'typescript']}
               code="https://github.com/chaos-seeker/bankdash"
               live="https://bankdash-swart.vercel.app/dashboard"
-            />
-            <CardItem
-              image="/images/projects-killua-document.jpg"
-              title={t('projects.killuaDocument.title')}
-              description={t('projects.killuaDocument.description')}
-              technologies={['nextjs', 'tailwind', 'typescript']}
-              code="https://github.com/chaos-seeker/killua"
-              live="https://github.com/chaos-seeker/killua/tree/main/websites/document"
-            />
-            <CardItem
-              image="/images/projects-killua-todo-list.jpg"
-              title={t('projects.todoList.title')}
-              description={t('projects.todoList.description')}
-              technologies={['nextjs', 'tailwind', 'typescript']}
-              code="https://github.com/chaos-seeker/killua/tree/main/websites/examples/todo%20list"
-              live="https://killua-todo-list.vercel.app/"
-            />
-            <CardItem
-              image="/images/projects-killua-shopping-cart.jpg"
-              title={t('projects.shoppingCart.title')}
-              description={t('projects.shoppingCart.description')}
-              technologies={['nextjs', 'tailwind', 'typescript']}
-              code="https://github.com/chaos-seeker/killua/tree/main/websites/examples/shopping%20cart"
-              live="https://killua-shopping-cart.vercel.app/"
             />
           </div>
         </div>
