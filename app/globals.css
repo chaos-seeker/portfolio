@@ -165,10 +165,9 @@
   }
 
   /* فارسی و عربی - Vazir */
-  html.font-vazir body,
   html[lang='fa'] body,
   html[lang='ar'] body {
-    font-family: 'Vazir', sans-serif;
+    font-family: var(--font-vazir), sans-serif;
   }
 
   /* تنظیمات RTL */
