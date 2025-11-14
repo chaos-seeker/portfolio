@@ -41,22 +41,6 @@ export const Projects = () => {
               live="https://konj-henna.vercel.app/"
             />
             <CardItem
-              image="/images/projects-doctor-plus.png"
-              title={t('projects.doctorPlus.title')}
-              description={t('projects.doctorPlus.description')}
-              technologies={['nextjs', 'tailwind', 'typescript']}
-              code="https://github.com/chaos-seeker/doctor-plus"
-              live="https://doctor-plus-olive.vercel.app/"
-            />
-            <CardItem
-              image="/images/projects-bartar.png"
-              title={t('projects.bartar.title')}
-              description={t('projects.bartar.description')}
-              technologies={['nextjs', 'tailwind', 'typescript']}
-              code="https://github.com/chaos-seeker/bartar"
-              live="https://bartar-three.vercel.app/"
-            />
-            <CardItem
               image="/images/projects-shopi.jpg"
               title={t('projects.shopi.title')}
               description={t('projects.shopi.description')}
@@ -73,12 +57,20 @@ export const Projects = () => {
               live="https://toranj.vercel.app/"
             />
             <CardItem
-              image="/images/projects-ava-movie.jpg"
-              title={t('projects.avaMovie.title')}
-              description={t('projects.avaMovie.description')}
+              image="/images/projects-doctor-plus.png"
+              title={t('projects.doctorPlus.title')}
+              description={t('projects.doctorPlus.description')}
               technologies={['nextjs', 'tailwind', 'typescript']}
-              code="https://github.com/chaos-seeker/ava-movie"
-              live="https://ava-movie.vercel.app/"
+              code="https://github.com/chaos-seeker/doctor-plus"
+              live="https://doctor-plus-olive.vercel.app/"
+            />
+            <CardItem
+              image="/images/projects-bartar.png"
+              title={t('projects.bartar.title')}
+              description={t('projects.bartar.description')}
+              technologies={['nextjs', 'tailwind', 'typescript']}
+              code="https://github.com/chaos-seeker/bartar"
+              live="https://bartar-three.vercel.app/"
             />
             <CardItem
               image="/images/projects-bank-dash.jpg"
@@ -87,6 +79,22 @@ export const Projects = () => {
               technologies={['nextjs', 'tailwind', 'typescript']}
               code="https://github.com/chaos-seeker/bankdash"
               live="https://bankdash-swart.vercel.app/dashboard"
+            />
+            <CardItem
+              image="/images/projects-ava-movie.jpg"
+              title={t('projects.avaMovie.title')}
+              description={t('projects.avaMovie.description')}
+              technologies={['nextjs', 'tailwind', 'typescript']}
+              code="https://github.com/chaos-seeker/ava-movie"
+              live="https://ava-movie.vercel.app/"
+            />
+            <CardItem
+              image="/images/projects-mobit.jpg"
+              title={t('projects.mobit.title')}
+              description={t('projects.mobit.description')}
+              technologies={['nextjs', 'tailwind', 'typescript']}
+              code="https://github.com/chaos-seeker/mobit"
+              live="https://mobit-frontend.vercel.app/"
             />
           </div>
         </div>
