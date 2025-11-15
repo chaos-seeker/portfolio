@@ -78,7 +78,7 @@ export const Skills = () => {
                       type="button"
                       className="bg-card border-border hover:border-primary hover:bg-accent text-muted-foreground hover:text-foreground rounded-md border px-3 py-1.5 text-sm font-normal transition-all"
                     >
-                      <AnimatedShinyText>{t(techKey as any)}</AnimatedShinyText>
+                      {t(techKey as any)}
                     </button>
                   ))}
                 </div>
