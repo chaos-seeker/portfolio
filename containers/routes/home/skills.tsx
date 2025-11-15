@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useTranslation } from '@/hooks/translation';
+import { AnimatedShinyText } from '@/ui/animated-shiny-text';
 
 interface SkillCategory {
   title: string;
@@ -67,9 +68,9 @@ export const Skills = () => {
           <div className="space-y-4">
             {categories.map((category) => (
               <div key={category.title} className="space-y-5">
-                <h3 className="text-foreground text-base font-medium tracking-tight">
+                <AnimatedShinyText className='font-medium'>
                   {t(category.title as any)}
-                </h3>
+                </AnimatedShinyText>
                 <div className="flex flex-wrap gap-2.5">
                   {category.techKeys.map((techKey) => (
                     <button
@@ -77,7 +78,7 @@ export const Skills = () => {
                       type="button"
                       className="bg-card border-border hover:border-primary hover:bg-accent text-muted-foreground hover:text-foreground rounded-md border px-3 py-1.5 text-sm font-normal transition-all"
                     >
-                      {t(techKey as any)}
+                      <AnimatedShinyText>{t(techKey as any)}</AnimatedShinyText>
                     </button>
                   ))}
                 </div>

@@ -39,7 +39,7 @@ export const HeroSection = () => {
         <div className="mt-29 flex flex-col items-center gap-7 lg:flex-row-reverse lg:justify-between">
           <div
             ref={imageRef}
-            className="h-fit w-fit shrink-0 cursor-pointer transition-transform duration-300 ease-out"
+            className="h-fit w-fit shrink-0 transition-transform duration-300 ease-out"
             style={{
               transform: `perspective(1000px) rotateX(${transform.rotateX}deg) rotateY(${transform.rotateY}deg)`,
               willChange: 'transform',
@@ -56,7 +56,7 @@ export const HeroSection = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <div className="flex flex-col items-center lg:items-start">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-start">
               <p className="mb-1 text-3xl font-bold lg:text-[33px]">
                 {t('hero.greeting')}{' '}
                 <span className="text-primary">
