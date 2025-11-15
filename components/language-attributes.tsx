@@ -9,9 +9,9 @@ export const LanguageAttributes = () => {
       const saved = localStorage.getItem('locale') as Locale;
       const currentLocale = saved && locales.includes(saved) ? saved : 'en';
       const html = document.documentElement;
-      
+
       html.lang = currentLocale;
-      
+
       if (currentLocale === 'fa' || currentLocale === 'ar') {
         html.dir = 'rtl';
       } else {
@@ -42,4 +42,3 @@ export const LanguageAttributes = () => {
 
   return null;
 };
-

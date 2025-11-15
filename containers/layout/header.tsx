@@ -14,7 +14,7 @@ import { useTranslation } from '@/hooks/translation';
 export const Header = () => {
   const scrollPosition = useScrollPosition();
   const { t } = useTranslation();
-  
+
   return (
     <header
       className={cn(
@@ -32,7 +32,7 @@ export const Header = () => {
               height={45}
               className="rounded-full dark:invert"
             />
-            <div className="flex gap-1 text-mdp sm:text-xl font-bold">
+            <div className="text-mdp flex gap-1 font-bold sm:text-xl">
               <p className="text-muted-foreground">{t('fullname.name')}</p>
               <p className="text-primary">{t('fullname.lastname')}</p>
             </div>
@@ -90,6 +90,7 @@ const ToggleTheme = () => {
 const LanguageSwitcher = () => {
   const [currentLocale, setCurrentLocale] = useState<Locale>('en');
   const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -98,6 +99,25 @@ const LanguageSwitcher = () => {
       setCurrentLocale(saved);
     }
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.language-switcher-container')) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      // Use capture phase to handle events before they bubble
+      document.addEventListener('mousedown', handleClickOutside, true);
+      document.addEventListener('touchstart', handleClickOutside, true);
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside, true);
+        document.removeEventListener('touchstart', handleClickOutside, true);
+      };
+    }
+  }, [isOpen]);
 
   const handleChangeLanguage = (locale: Locale) => {
     setCurrentLocale(locale);
@@ -114,11 +134,24 @@ const LanguageSwitcher = () => {
   }
 
   return (
-    <div className="group relative">
-      <Button variant="outline" size="icon" className="gap-1">
+    <div className="language-switcher-container group relative">
+      <Button
+        variant="outline"
+        size="icon"
+        className="gap-1"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label="Switch language"
+        aria-expanded={isOpen}
+      >
         <Globe className="size-5" />
       </Button>
-      <div className="bg-popover border-border invisible absolute right-0 z-50 mt-2 w-32 rounded-lg border opacity-0 shadow-lg transition-all duration-200 group-hover:visible group-hover:opacity-100">
+      <div
+        className={`bg-popover border-border absolute right-0 z-50 mt-2 w-32 rounded-lg border shadow-lg transition-all duration-200 ${
+          isOpen
+            ? 'visible opacity-100'
+            : 'invisible opacity-0 group-hover:visible group-hover:opacity-100'
+        }`}
+      >
         {locales.map((locale) => (
           <button
             key={locale}
