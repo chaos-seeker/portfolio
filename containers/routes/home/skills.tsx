@@ -28,10 +28,19 @@ export const Skills = () => {
       title: 'skills.categories.styling',
       techKeys: [
         'tech.tailwind',
+        'tech.sass',
         'tech.shadcnui',
-        'tech.daisyui',
         'tech.heroui',
         'tech.framerMotion',
+      ],
+    },
+    {
+      title: 'skills.categories.forms',
+      techKeys: [
+        'tech.reactHookForm',
+        'tech.formik',
+        'tech.zod',
+        'tech.yup',
       ],
     },
     {
@@ -39,13 +48,23 @@ export const Skills = () => {
       techKeys: [
         'tech.zustand',
         'tech.reactQuery',
+        'tech.swr',
         'tech.jotai',
         'tech.recoil',
+        'tech.nuqs',
       ],
     },
     {
       title: 'skills.categories.tools',
-      techKeys: ['tech.git', 'tech.npm', 'tech.figma', 'tech.linux'],
+      techKeys: [
+        'tech.git',
+        'tech.npm',
+        'tech.figma',
+        'tech.linux',
+        'tech.eslint',
+        'tech.husky',
+        'tech.prettier',
+      ],
     },
   ];
 
