@@ -41,6 +41,14 @@ export const Projects = () => {
               live="https://konj-henna.vercel.app/"
             />
             <CardItem
+              image="/images/projects-digikala.jpg"
+              title={t('projects.digikala.title')}
+              description={t('projects.digikala.description')}
+              technologies={['nextjs', 'tailwind', 'typescript']}
+              code="https://github.com/chaos-seeker/digi-kala"
+              live="https://digi-kala-one.vercel.app/"
+            />
+            <CardItem
               image="/images/projects-shopi.jpg"
               title={t('projects.shopi.title')}
               description={t('projects.shopi.description')}
